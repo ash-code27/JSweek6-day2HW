@@ -43,19 +43,27 @@ age by 3 years. Use an arrow function for both methods
 */
 
 // Create our Person Prototype
-    function Person(name, age){
-        this.name = name;
-        this.age = age;
+    class Person {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+            
+        }
     
 
 // Use an arrow to create the printInfo method
-    this.printInfo = function(){
+    printInfo = () => {
+        return `This is ${this.name} and he is ${this.age} years old`
+    }
+
+    increment_age = () => {
+        this.age++
         return `This is ${this.name} and he is ${this.age} years old`
     }
 }    
 
 
-let person_A = new Person('Garfield', 48)
+let person_A = new Person('Garfield', 5)
 let person_B = new Person('Odie', 3)
 
 console.log(person_A.printInfo())
